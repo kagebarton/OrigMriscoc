@@ -5,7 +5,7 @@
  * Date: 2022/08/08
  *
  * This program is free software: you can redistribute it and/or modify
- * it under the terms of the GNU Lesser General Public License as 
+ * it under the terms of the GNU Lesser General Public License as
  * published by the Free Software Foundation, either version 3 of the License, or
  * (at your option) any later version.
  *
@@ -40,15 +40,15 @@
   #define HAS_ZOFFSET_ITEM 1
 #endif
 
-#define Def_Background_Color  RGB( 1, 12,  8)
-#define Def_Cursor_Color      RGB(20, 49, 31)
-#define Def_TitleBg_Color     RGB( 0, 23, 16)
+#define Def_Background_Color  Color_Bg_Black //
+#define Def_Cursor_Color      Color_Cyan //
+#define Def_TitleBg_Color     Color_Voxelab_Red //
 #define Def_TitleTxt_Color    Color_White
 #define Def_Text_Color        Color_White
 #define Def_Selected_Color    Select_Color
-#define Def_SplitLine_Color   RGB( 0, 23, 16)
+#define Def_SplitLine_Color   Color_White //
 #define Def_Highlight_Color   Color_White
-#define Def_StatusBg_Color    RGB( 0, 23, 16)
+#define Def_StatusBg_Color    Color_Bg_Black //
 #define Def_StatusTxt_Color   Color_Yellow
 #define Def_PopupBg_Color     Color_Bg_Window
 #define Def_PopupTxt_Color    Popup_Text_Color
@@ -56,9 +56,9 @@
 #define Def_AlertTxt_Color    Color_Yellow
 #define Def_PercentTxt_Color  Percent_Color
 #define Def_Barfill_Color     BarFill_Color
-#define Def_Indicator_Color   Color_White
-#define Def_Coordinate_Color  Color_White
-#define Def_Button_Color      RGB( 0, 23, 16)
+#define Def_Indicator_Color   Color_Cyan //
+#define Def_Coordinate_Color  Color_Brown //
+#define Def_Bottom_Color      Color_Silver //
 #define Def_Leds_Color      0xFFFFFFFF
 #define Def_CaseLight_Brightness 255
 #ifdef Z_AFTER_HOMING
@@ -66,7 +66,7 @@
 #else
   #define DEF_Z_AFTER_HOMING 0
 #endif
-#define DEF_HOTENDPIDT TERN(PREHEAT_1_TEMP_BED, PREHEAT_1_TEMP_HOTEND, 195)
+#define DEF_HOTENDPIDT TERN(PREHEAT_1_TEMP_BED, PREHEAT_1_TEMP_HOTEND, 200)
 #define DEF_BEDPIDT TERN(PREHEAT_1_TEMP_BED, PREHEAT_1_TEMP_HOTEND, 60)
 #define DEF_PIDCYCLES 5
 
@@ -75,7 +75,7 @@
 //=============================================================================
 
 #if ENABLED(HAS_GCODE_PREVIEW) && DISABLED(ProUIex)
-  #error "HAS_GCODE_PREVIEW requires ProUIex."
+  //#error "HAS_GCODE_PREVIEW requires ProUIex."
 #endif
 #if ENABLED(HAS_TOOLBAR) && DISABLED(ProUIex)
   #error "HAS_TOOLBAR requires ProUIex."
@@ -89,9 +89,9 @@
   #if HAS_TOOLBAR
     #define TBMaxOpt 5                    // Amount of shortcuts on screen
     #if HAS_BED_PROBE
-      #define DEF_TBOPT {0, 1, 2, 3, 4}   // Default shorcuts for ALB/UBL
+      #define DEF_TBOPT {9, 8, 0, 1, 4}   // Default shorcuts for ALB/UBL
     #else
-      #define DEF_TBOPT {0, 1, 4, 5, 6};  // Default shortcuts for MM
+      #define DEF_TBOPT {7, 0, 6, 2, 8};  // Default shortcuts for MM
     #endif
   #endif
 
