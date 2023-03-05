@@ -1221,9 +1221,9 @@
  */
 //#define CLASSIC_JERK  // Ender Configs
 #if ENABLED(CLASSIC_JERK)
-  #define DEFAULT_XJERK 8.0  // Ender Configs
-  #define DEFAULT_YJERK 8.0  // Ender Configs
-  #define DEFAULT_ZJERK  0.4  // Ender Configs
+  #define DEFAULT_XJERK 10.0  // Ender Configs
+  #define DEFAULT_YJERK 10.0  // Ender Configs
+  #define DEFAULT_ZJERK  0.3  // Ender Configs
   //#define DEFAULT_IJERK  0.3
   //#define DEFAULT_JJERK  0.3
   //#define DEFAULT_KJERK  0.3
@@ -1233,7 +1233,7 @@
 
   //#define TRAVEL_EXTRA_XYJERK 0.0     // Additional jerk allowance for all travel moves
 
-  #define LIMITED_JERK_EDITING        // Limit edit via M205 or LCD to DEFAULT_aJERK * 2  // Ender Configs
+  //#define LIMITED_JERK_EDITING        //KT Limit edit via M205 or LCD to DEFAULT_aJERK * 2  // Ender Configs
   #if ENABLED(LIMITED_JERK_EDITING)
     #define MAX_JERK_EDIT_VALUES { 20, 20, 1, 20 } // ...or, set your own edit limits  // MRiscoC allows higher limits
   #endif
@@ -1262,7 +1262,7 @@
  *
  * See https://github.com/synthetos/TinyG/wiki/Jerk-Controlled-Motion-Explained
  */
-//#define S_CURVE_ACCELERATION  // MRiscoC Enabled
+#define S_CURVE_ACCELERATION  //KT MRiscoC Enabled
 
 //===========================================================================
 //============================= Z Probe Options =============================
