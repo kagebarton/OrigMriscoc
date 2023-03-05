@@ -189,7 +189,9 @@ constexpr uint8_t epps = ENCODER_PULSES_PER_STEP;
   millis_t MarlinUI::backlight_off_ms = 0;
   void MarlinUI::refresh_backlight_timeout() {
     backlight_off_ms = backlight_timeout_minutes ? millis() + backlight_timeout_minutes * 60UL * 1000UL : 0;
-    WRITE(LCD_BACKLIGHT_PIN, HIGH);
+    #if PIN_EXISTS(LCD_BACKLIGHT) //KT
+      WRITE(LCD_BACKLIGHT_PIN, HIGH);
+    #endif	  //KT
   }
 
 #elif HAS_DISPLAY_SLEEP
