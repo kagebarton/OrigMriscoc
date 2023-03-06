@@ -1197,8 +1197,13 @@ void MarlinUI::init() {
 
       #if LCD_BACKLIGHT_TIMEOUT_MINS
         if (backlight_off_ms && ELAPSED(ms, backlight_off_ms)) {
+      #if PIN_EXISTS(LCD_BACKLIGHT) //KTT
           WRITE(LCD_BACKLIGHT_PIN, LOW); // Backlight off
           backlight_off_ms = 0;
+	  #else
+          // Backlight off (add function to turn off backlight for LCD-12864)
+          backlight_off_ms = 0;
+	  #endif
         }
       #elif HAS_DISPLAY_SLEEP
         if (screen_timeout_millis && ELAPSED(ms, screen_timeout_millis))

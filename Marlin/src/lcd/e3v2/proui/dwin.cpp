@@ -1214,6 +1214,12 @@ void EachMomentUpdate() {
   static millis_t next_var_update_ms = 0, next_rts_update_ms = 0, next_status_update_ms = 0;
   const millis_t ms = millis();
 
+  #if LCD_BACKLIGHT_TIMEOUT_MINS //KT
+    if (ui.backlight_off_ms && ELAPSED(ms, ui.backlight_off_ms)) {
+      TurnOffBacklight(); // Backlight off
+      ui.backlight_off_ms = 0;
+    }
+  #endif
   if (ELAPSED(ms, next_var_update_ms)) {
     next_var_update_ms = ms + DWIN_VAR_UPDATE_INTERVAL;
     blink = !blink;
@@ -2239,6 +2245,9 @@ void SetPID(celsius_t t, heater_id_t h) {
 
 #endif
 
+  #if LCD_BACKLIGHT_TIMEOUT_MINS //KT
+  void SetTimer() { SetPIntOnClick(ui.backlight_timeout_min, ui.backlight_timeout_max); }
+  #endif
 #if ProUIex && ENABLED(NOZZLE_PARK_FEATURE)
   void SetParkPosX()   { SetPIntOnClick(X_MIN_POS, X_MAX_POS); }
   void SetParkPosY()   { SetPIntOnClick(Y_MIN_POS, Y_MAX_POS); }
@@ -2885,6 +2894,9 @@ void Draw_AdvancedSettings_Menu() {
     #if ENABLED(BAUD_RATE_GCODE)
       EDIT_ITEM_F(ICON_SetBaudRate, "115K baud", onDrawChkbMenu, SetBaudRate, &HMI_data.Baud115K);
     #endif
+	#if LCD_BACKLIGHT_TIMEOUT_MINS //KT
+      EDIT_ITEM(ICON_LedControl, MSG_SCREEN_TIMEOUT, onDrawPIntMenu, SetTimer, &ui.backlight_timeout_minutes);
+    #endif
     #if HAS_LCD_BRIGHTNESS
       EDIT_ITEM(ICON_Brightness, MSG_BRIGHTNESS, onDrawPInt8Menu, SetBrightness, &ui.brightness);
       MENU_ITEM(ICON_Brightness, MSG_BRIGHTNESS_OFF, onDrawMenuItem, TurnOffBacklight);
@@ -3138,6 +3150,9 @@ void Draw_Tune_Menu() {
     #endif
     #if HAS_LOCKSCREEN
       MENU_ITEM(ICON_Lock, MSG_LOCKSCREEN, onDrawMenuItem, DWIN_LockScreen);
+    #endif
+	#if LCD_BACKLIGHT_TIMEOUT_MINS //KT
+      EDIT_ITEM(ICON_LedControl, MSG_SCREEN_TIMEOUT, onDrawPIntMenu, SetTimer, &ui.backlight_timeout_minutes);
     #endif
     #if HAS_LCD_BRIGHTNESS
       EDIT_ITEM(ICON_Brightness, MSG_BRIGHTNESS, onDrawPInt8Menu, SetBrightness, &ui.brightness);
