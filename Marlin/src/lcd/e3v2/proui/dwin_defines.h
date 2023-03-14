@@ -40,15 +40,15 @@
   #define HAS_ZOFFSET_ITEM 1
 #endif
 
-#define Def_Background_Color  RGB( 1, 12,  8)
-#define Def_Cursor_Color      RGB(20, 49, 31)
-#define Def_TitleBg_Color     RGB( 0, 23, 16)
+#define Def_Background_Color  Color_Bg_Black //
+#define Def_Cursor_Color      Color_Cyan //
+#define Def_TitleBg_Color     Color_Voxelab_Red //
 #define Def_TitleTxt_Color    Color_White
 #define Def_Text_Color        Color_White
 #define Def_Selected_Color    Select_Color
-#define Def_SplitLine_Color   RGB( 0, 23, 16)
+#define Def_SplitLine_Color   Color_White //
 #define Def_Highlight_Color   Color_White
-#define Def_StatusBg_Color    RGB( 0, 23, 16)
+#define Def_StatusBg_Color    Color_Bg_Black //
 #define Def_StatusTxt_Color   Color_Yellow
 #define Def_PopupBg_Color     Color_Bg_Window
 #define Def_PopupTxt_Color    Popup_Text_Color
@@ -56,9 +56,9 @@
 #define Def_AlertTxt_Color    Color_Yellow
 #define Def_PercentTxt_Color  Percent_Color
 #define Def_Barfill_Color     BarFill_Color
-#define Def_Indicator_Color   Color_White
-#define Def_Coordinate_Color  Color_White
-#define Def_Button_Color      RGB( 0, 23, 16)
+#define Def_Indicator_Color   Color_Cyan //
+#define Def_Coordinate_Color  Color_Brown //
+#define Def_Button_Color      Color_Silver //
 #define Def_Leds_Color        0xFFFFFFFF
 #define Def_CaseLight_Brightness 255
 #define DEF_Z_AFTER_HOMING TERN(Z_AFTER_HOMING, Z_AFTER_HOMING, 0)
