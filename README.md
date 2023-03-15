@@ -1,3 +1,13 @@
+Customizations for my G32 Aquila:
+
+- Used Special Configurator for G32, Bilinear BLTouch, Home Offsets, Linear Advance, MPC hotend
+- T61 themistor for generic NTC100K B3950 cartridge thermistor
+- Timers.h fix for clone 3DTouch
+- Reversed extruder for BMG
+- Pin PA13 UART mod for extruder stepper (full TMC driver mode rather than standalone)
+- Disabled stealthchop for more accurate movement (noise doesn't matter since my printer in garage)
+- Changed GUI colors to better match Aquila
+
 # Professional Firmware for the Creality Ender 3 V2/S1 Printers
 
 ![GitHub contributors](https://img.shields.io/github/contributors/mriscoc/Ender3V2S1.svg)
