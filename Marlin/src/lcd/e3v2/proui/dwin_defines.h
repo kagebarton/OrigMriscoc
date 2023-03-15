@@ -41,7 +41,7 @@
 #endif
 
 #define Def_Background_Color  Color_Bg_Black //
-#define Def_Cursor_Color      Color_Cyan //
+#define Def_Cursor_Color      Color_White //
 #define Def_TitleBg_Color     Color_Voxelab_Red //
 #define Def_TitleTxt_Color    Color_White
 #define Def_Text_Color        Color_White
@@ -56,7 +56,7 @@
 #define Def_AlertTxt_Color    Color_Yellow
 #define Def_PercentTxt_Color  Percent_Color
 #define Def_Barfill_Color     BarFill_Color
-#define Def_Indicator_Color   Color_Cyan //
+#define Def_Indicator_Color   Color_White //
 #define Def_Coordinate_Color  Color_Brown //
 #define Def_Button_Color      Color_Silver //
 #define Def_Leds_Color        0xFFFFFFFF
