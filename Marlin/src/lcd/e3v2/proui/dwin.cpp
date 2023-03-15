@@ -3341,7 +3341,7 @@ void Draw_Motion_Menu() {
   void Draw_PreheatHotend_Menu() {
     checkkey = Menu;
     if (SET_MENU(PreheatHotendMenu, MSG_PREHEAT_HOTEND, 1 + PREHEAT_COUNT)) {
-      BACK_ITEM(Draw_FilamentMan_Menu);
+      BACK_ITEM(Draw_FilSet_Menu);
       #define _ITEM_PREHEAT_HE(N) MENU_ITEM(ICON_Preheat##N, MSG_PREHEAT_##N, onDrawMenuItem, DoPreheatHotend##N);
       REPEAT_1(PREHEAT_COUNT, _ITEM_PREHEAT_HE)
     }
