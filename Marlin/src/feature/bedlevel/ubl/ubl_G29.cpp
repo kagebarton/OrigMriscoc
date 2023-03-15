@@ -831,6 +831,10 @@ void unified_bed_leveling::shift_mesh_height() {
         constrain(nearby.y - probe.offset_xy.y, MESH_MIN_Y, MESH_MAX_Y)
       );
     #endif
+	
+	#if LCD_BACKLIGHT_TIMEOUT_MINS
+      ui.refresh_backlight_timeout();
+    #endif
 
     TERN_(EXTENSIBLE_UI, ExtUI::onLevelingDone());
     TERN_(DWIN_LCD_PROUI, DWIN_LevelingDone());

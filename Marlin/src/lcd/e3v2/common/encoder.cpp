@@ -84,6 +84,9 @@ EncoderState Encoder_ReceiveAnalyze() {
     if (ELAPSED(now, next_click_update_ms)) {
       next_click_update_ms = millis() + 300;
       Encoder_tick();
+	  #if LCD_BACKLIGHT_TIMEOUT_MINS //KT
+        ui.refresh_backlight_timeout(); //reset timer on click
+      #endif
       #if PIN_EXISTS(LCD_LED)
         //LED_Action();
       #endif
